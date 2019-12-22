@@ -27,7 +27,7 @@ public class AmazonDao {
         PreparedStatement customerPstmt = null;
         try {
             customerPstmt = connection.prepareStatement(customersQuery);
-            for (int i = 1; i < 500000; i++) {
+            for (int i = 1; i < 10000; i++) {
                 customerPstmt.setInt(1,  i);
                 customerPstmt.setString(2, "customer_name" + i);
                 customerPstmt.setString(3, "customer_address" + i);
@@ -51,7 +51,7 @@ public class AmazonDao {
         PreparedStatement ordersPstmt = null;
         try {
             ordersPstmt = connection.prepareStatement(ordersQuery);
-            for (int i = 1; i < 500000; i++) {
+            for (int i = 1; i < 10000; i++) {
                 ordersPstmt.setInt(1,  i);
                 ordersPstmt.setString(2, "order_number" + i);
                 ordersPstmt.setInt(3,   i);
@@ -76,7 +76,7 @@ public class AmazonDao {
         PreparedStatement itemsPstmt = null;
         try {
             itemsPstmt = connection.prepareStatement(itemsQuery);
-            for (int i = 1; i < 500000; i++) {
+            for (int i = 1; i < 10000; i++) {
                 itemsPstmt.setInt(1,  i);
                 itemsPstmt.setString(2, "item_name" + i);
                 itemsPstmt.setInt(3,   i);
@@ -101,7 +101,7 @@ public class AmazonDao {
         PreparedStatement pricePstmt = null;
         try {
             pricePstmt = connection.prepareStatement(pricesQuery);
-            for (int i = 1; i < 500000; i++) {
+            for (int i = 1; i < 10000; i++) {
                 pricePstmt.setInt(1,  i);
                 pricePstmt.setFloat(2, i);
                 Date start=new Date(ThreadLocalRandom.current().nextInt() * 1000L);
